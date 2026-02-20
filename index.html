@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tono | Digital Product Store</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  color:white;
+  scroll-behavior:smooth;
+}
+
+/* HERO */
+.hero{
+  background:radial-gradient(circle at top,#1e293b,#0f172a 70%);
+  padding:70px 20px 110px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.profile-wrapper{
+  position:relative;
+  width:140px;
+  height:140px;
+  margin:auto;
+}
+
+.profile-wrapper::before{
+  content:"";
+  position:absolute;
+  inset:-6px;
+  border-radius:50%;
+  background:conic-gradient(#22c55e,#2563eb,#22c55e);
+  animation:spin 4s linear infinite;
+  z-index:0;
+}
+
+.profile{
+  position:relative;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  background:url('profile.jpg') center/cover no-repeat;
+  border:5px solid #0f172a;
+  z-index:1;
+}
+
+@keyframes spin{
+  100%{transform:rotate(360deg);}
+}
+
+.hero h1{
+  margin:20px 0 5px;
+  font-size:24px;
+}
+
+.hero p{
+  color:#94a3b8;
+  margin-bottom:15px;
+}
+
+.cta-btn{
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:#22c55e;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.cta-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 15px #22c55e;
+}
+
+.countdown{
+  margin-top:15px;
+  color:#facc15;
+  font-weight:bold;
+}
+
+/* SALES BANNER */
+.sales-banner{
+  background:#111827;
+  padding:35px 15px;
+  text-align:center;
+}
+
+.sales-title{
+  font-size:24px;
+  font-weight:bold;
+  margin-bottom:25px;
+  color:#22c55e;
+}
+
+.sales-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  max-width:700px;
+  margin:auto;
+}
+
+.sales-card{
+  background:#1e293b;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  transition:0.3s;
+}
+
+.sales-card:hover{
+  transform:translateY(-5px);
+}
+
+.sales-month{
+  color:#94a3b8;
+  font-size:14px;
+}
+
+.sales-value{
+  font-size:26px;
+  font-weight:bold;
+  margin-top:8px;
+  color:#facc15;
+}
+
+/* CONTAINER */
+.container{
+  max-width:600px;
+  margin:30px auto 20px;
+  padding:0 15px;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.card{
+  background:white;
+  color:black;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  transition:0.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+}
+
+.content{
+  padding:12px;
+}
+
+.price{
+  font-weight:bold;
+  margin:6px 0;
+}
+
+.free{color:#22c55e}
+.yellow{color:#facc15}
+
+.card button{
+  width:100%;
+  padding:9px;
+  border:none;
+  border-radius:12px;
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.card button:hover{
+  background:#1d4ed8;
+}
+
+.badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:red;
+  color:white;
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:8px;
+}
+
+/* FEATURES */
+.features{
+  background:#1e293b;
+  margin-top:25px;
+  padding:20px;
+  border-radius:15px;
+}
+
+.features li{
+  margin-bottom:8px;
+  color:#94a3b8;
+}
+
+.donate{
+  background:#1e293b;
+  padding:15px;
+  border-radius:15px;
+  margin-top:20px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.footer{
+  text-align:center;
+  margin:20px 0;
+  font-size:13px;
+  color:#64748b;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="profile-wrapper">
+    <div class="profile"></div>
+  </div>
+  <h1>Tono Yasuie</h1>
+  <p>Reseller Produk Digital • 100% Hak Jual Kembali</p>
+  <button class="cta-btn" onclick="scrollProduk()">Lihat Produk 🔥</button>
+  <div class="countdown" id="countdown"></div>
+</div>
+
+<!-- SALES BANNER -->
+<div class="sales-banner">
+  <div class="sales-title">Hasil Dari Sekolah Sambil Jualan</div>
+
+  <div class="sales-grid">
+    <div class="sales-card">
+      <div class="sales-month">Agustus 2026</div>
+      <div class="sales-value">Rp 3.480.000</div>
+    </div>
+
+    <div class="sales-card">
+      <div class="sales-month">September 2026</div>
+      <div class="sales-value">Rp 5.275.000</div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="produk">
+
+<div class="products">
+
+<div class="card">
+  <img src="ebook.jpg">
+  <div class="content">
+    <h4>10 Judul E-Book Produk Digital</h4>
+    <div class="price free">FREE</div>
+    <button onclick="alert('Aktifkan fitur email untuk download')">Download</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="trio.jpg">
+  <div class="content">
+    <h4>Paket Trio 30GB Aset Editing</h4>
+    <div class="price yellow">Rp 25.000</div>
+    <button onclick="beliTrio()">Beli</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="capcut.jpg">
+  <div class="content">
+    <h4>CapCut Pro Hak Jual Ulang</h4>
+    <div class="price yellow">Rp 35.000</div>
+    <button onclick="beliProduk()">Beli</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="badge">BEST SELLER</div>
+  <img src="bundling.jpg">
+  <div class="content">
+    <h4>Paket Bundling Super Hemat</h4>
+    <div class="price yellow">Rp 79.000</div>
+    <button onclick="beliBundling()">Beli</button>
+  </div>
+</div>
+
+</div>
+
+<div class="features">
+  <h3>Kenapa Beli Disini?</h3>
+  <ul>
+    <li>✔ 100% Hak Jual Kembali</li>
+    <li>✔ Bisa Langsung Dijual Lagi</li>
+    <li>✔ Cocok Untuk Pemula</li>
+    <li>✔ Support via WhatsApp</li>
+  </ul>
+</div>
+
+<div class="donate">
+  Support: DANA 6288225057120
+</div>
+
+<div class="footer">
+© 2026 tonoyasuie
+</div>
+
+</div>
+
+<script>
+function scrollProduk(){
+document.getElementById("produk").scrollIntoView({behavior:"smooth"});
+}
+
+function beliProduk(){
+window.location.href="https://wa.me/6288225057120?text=Halo%20saya%20mau%20beli%20CapCut%20Pro";
+}
+
+function beliTrio(){
+window.location.href="https://wa.me/6288225057120?text=Halo%20saya%20mau%20beli%20Paket%20Trio%2030GB";
+}
+
+function beliBundling(){
+window.location.href="https://wa.me/6288225057120?text=Halo%20saya%20mau%20beli%20Bundling%20Super%20Hemat";
+}
+
+/* COUNTDOWN */
+var countDownDate = new Date().getTime() + (24*60*60*1000);
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+  var minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+  var seconds = Math.floor((distance % (1000*60))/1000);
+
+  document.getElementById("countdown").innerHTML =
+  "Promo berakhir dalam: " + hours + "j " + minutes + "m " + seconds + "d ";
+
+  if(distance < 0){
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML="Promo Berakhir";
+  }
+},1000);
+</script>
+
+</body>
+  </html>
