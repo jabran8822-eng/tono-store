@@ -205,7 +205,6 @@ body{
   border-radius:8px;
 }
 
-/* FEATURES */
 .features{
   background:#1e293b;
   margin-top:25px;
@@ -247,25 +246,22 @@ body{
   <div class="countdown" id="countdown"></div>
 </div>
 
-<!-- SALES BANNER -->
+<!-- SALES -->
 <div class="sales-banner">
   <div class="sales-title">Hasil Dari Sekolah Sambil Jualan</div>
-
   <div class="sales-grid">
     <div class="sales-card">
       <div class="sales-month">Agustus 2026</div>
-      <div class="sales-value">Rp 3.480.000</div>
+      <div class="sales-value">Rp 320.000</div>
     </div>
-
     <div class="sales-card">
       <div class="sales-month">September 2026</div>
-      <div class="sales-value">Rp 5.275.000</div>
+      <div class="sales-value">Rp 485.000</div>
     </div>
   </div>
 </div>
 
 <div class="container" id="produk">
-
 <div class="products">
 
 <div class="card">
@@ -273,7 +269,7 @@ body{
   <div class="content">
     <h4>10 Judul E-Book Produk Digital</h4>
     <div class="price free">FREE</div>
-    <button onclick="alert('Aktifkan fitur email untuk download')">Download</button>
+    <button>Download</button>
   </div>
 </div>
 
@@ -281,8 +277,8 @@ body{
   <img src="trio.jpg">
   <div class="content">
     <h4>Paket Trio 30GB Aset Editing</h4>
-    <div class="price yellow">Rp 25.000</div>
-    <button onclick="beliTrio()">Beli</button>
+    <div class="price yellow">Rp 1.000</div>
+    <button>Beli</button>
   </div>
 </div>
 
@@ -290,8 +286,8 @@ body{
   <img src="capcut.jpg">
   <div class="content">
     <h4>CapCut Pro Hak Jual Ulang</h4>
-    <div class="price yellow">Rp 35.000</div>
-    <button onclick="beliProduk()">Beli</button>
+    <div class="price yellow">Rp 1.000</div>
+    <button>Beli</button>
   </div>
 </div>
 
@@ -300,25 +296,11 @@ body{
   <img src="bundling.jpg">
   <div class="content">
     <h4>Paket Bundling Super Hemat</h4>
-    <div class="price yellow">Rp 79.000</div>
-    <button onclick="beliBundling()">Beli</button>
+    <div class="price yellow">Rp 1.000</div>
+    <button>Beli</button>
   </div>
 </div>
 
-</div>
-
-<div class="features">
-  <h3>Kenapa Beli Disini?</h3>
-  <ul>
-    <li>✔ 100% Hak Jual Kembali</li>
-    <li>✔ Bisa Langsung Dijual Lagi</li>
-    <li>✔ Cocok Untuk Pemula</li>
-    <li>✔ Support via WhatsApp</li>
-  </ul>
-</div>
-
-<div class="donate">
-  Support: DANA 6288225057120
 </div>
 
 <div class="footer">
@@ -327,43 +309,5 @@ body{
 
 </div>
 
-<script>
-function scrollProduk(){
-document.getElementById("produk").scrollIntoView({behavior:"smooth"});
-}
-
-function beliProduk(){
-window.location.href="https://wa.me/6288225057120?text=Halo%20saya%20mau%20beli%20CapCut%20Pro";
-}
-
-function beliTrio(){
-window.location.href="https://wa.me/6288225057120?text=Halo%20saya%20mau%20beli%20Paket%20Trio%2030GB";
-}
-
-function beliBundling(){
-window.location.href="https://wa.me/6288225057120?text=Halo%20saya%20mau%20beli%20Bundling%20Super%20Hemat";
-}
-
-/* COUNTDOWN */
-var countDownDate = new Date().getTime() + (24*60*60*1000);
-
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-
-  var hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-  var minutes = Math.floor((distance % (1000*60*60))/(1000*60));
-  var seconds = Math.floor((distance % (1000*60))/1000);
-
-  document.getElementById("countdown").innerHTML =
-  "Promo berakhir dalam: " + hours + "j " + minutes + "m " + seconds + "d ";
-
-  if(distance < 0){
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML="Promo Berakhir";
-  }
-},1000);
-</script>
-
 </body>
-  </html>
+</html>
